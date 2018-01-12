@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  * @author oracle
  */
 public class Examen {
+    private double c,f;
+    private int v;
      
     public double examenPractico(){
         
@@ -19,9 +21,9 @@ public class Examen {
     int a = Integer.parseInt(e);
     String d=JOptionPane.showInputDialog("ponga las notas correspondientes: ");
     int b = Integer.parseInt(d);
-    float c= (a+b)/2;
+    c= (a+b)/2;
     JOptionPane.showMessageDialog(null,"las pruebas parácticas dan: "+c);
-    return c*40/100;
+    return c;
     } 
    
     public double examenTeorico(){
@@ -29,12 +31,12 @@ public class Examen {
     int a = Integer.parseInt(e);
     String d=JOptionPane.showInputDialog("ponga las notas correspondientes: ");
     int b = Integer.parseInt(d);
-    float f= (a+b)/2;
+    f= (a+b)/2;
     JOptionPane.showMessageDialog(null,"las pruebas parácticas dan: "+f);
-            return f*40/100;
+            return f;
     }
     public int boletin(){
-       int v=0;
+      
           String e=JOptionPane.showInputDialog("ponga el número de trabajos: ");
         int c = Integer.parseInt(e);
          String d=JOptionPane.showInputDialog("ponga el número de trabajos entregados: ");
@@ -48,7 +50,10 @@ public class Examen {
         return v;
         
     }
-
+public void total(){
+    double q=v+f*40/100+c*40/100;
+    JOptionPane.showMessageDialog(null,"el total es: "+q);
+}
       
     
 
@@ -59,6 +64,9 @@ public class Examen {
         // TODO code application logic here
         Examen a= new Examen();
        a.boletin();
+       a.examenPractico();
+       a.examenTeorico();
+       a.total();
     }
     
 }
