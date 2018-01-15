@@ -38,7 +38,7 @@ public class Examen {
     public int boletin(){
       
           String e=JOptionPane.showInputDialog("ponga el número de trabajos: ");
-        int c = Integer.parseInt(e);
+        int r = Integer.parseInt(e);
          String d=JOptionPane.showInputDialog("ponga el número de trabajos entregados: ");
         int b = Integer.parseInt(d);
      if (b<=0.9*c)
